@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Name of the stash to activate.
+new_stash_name=$1
+
+script_dir=$(dirname "$(readlink -f "$0")")
+source "$script_dir/lib.sh"
+
+if [[ -z "$new_stash_name" ]]; then
+    echo "$0: you must specify the name of the stash to create" >&2
+fi
+
+new_stash_from 'empty-six-tab-stash' "$new_stash_name"
+echo "created new stash: $new_stash_name" >&2

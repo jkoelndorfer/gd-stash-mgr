@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Name of the stash to activate.
+selected_stash_name=$1
+
+script_dir=$(dirname "$(readlink -f "$0")")
+source "$script_dir/lib.sh"
+
+if [[ -z "$selected_stash_name" ]]; then
+    echo "$0: you must specify the name of the stash to activate" >&2
+fi
+
+activate_stash "$selected_stash_name"
+echo "activated stash: $selected_stash_name" >&2
