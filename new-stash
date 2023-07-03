@@ -10,5 +10,5 @@ if [[ -z "$new_stash_name" ]]; then
     echo "$0: you must specify the name of the stash to create" >&2
 fi
 
-new_stash_from 'empty-six-tab-stash' "$new_stash_name"
+new_stash_from 'vanilla-empty-six-tab-stash' "$new_stash_name"
 echo "created new stash: $new_stash_name" >&2
